@@ -2,6 +2,7 @@
 #include <catch.hpp>
 #include "sphere.hpp"
 #include "box.hpp"
+#include "sdfloader.hpp"
 
 TEST_CASE("sphere","[sphere]"){
 
@@ -73,6 +74,12 @@ TEST_CASE("destructors","[destructors]"){
 
     delete s1;
     delete s2;
+}
+
+TEST_CASE("sdfloader","[sdfloader]"){
+    SDFloader result{};
+    result.loadMaterial("/home/isabelle/Dokumente/programmiersprachen-raytracer/framework/material_scene.txt");
+    std::cout << result.holdMaterial[0];
 }
 
 
